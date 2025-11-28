@@ -6,17 +6,19 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="homeStyle.css">
+  <link rel="stylesheet" href="css/homeStyle.css">
   <link rel="icon" type="image/jpg" href="https://i.pinimg.com/564x/e8/df/01/e8df017b8459c3fdc951da06ce0be115.jpg">
   <title>Welcome</title>
 </head>
 <body>
   <audio id="bg-audio" autoplay loop>
-  <source src="rain.mp3" type="audio/mpeg">
-</audio>
+    <source src="rain.mp3" type="audio/mpeg">
+  </audio>
+
   <div id="loading-overlay">
     <div class="loader"><img src="loading.gif" alt="Loading..."></div>
   </div>
+
   <div class="home-container">
     <div class="prompt-container">
       <h1>4 digits</h1>
@@ -27,116 +29,12 @@
 
   <div class="video-container-home">
     <video id="background-video-home" autoplay muted loop class="background-video-home" preload="auto">
-      <source src="BG2.mp4" type="video/mp4" />
+      <source src="assets/BG2.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-    import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyD5TC0pbWHZnuvrEY0UxQNxy3fuKAQsm70",
-      authDomain: "yuugotthis.firebaseapp.com",
-      projectId: "yuugotthis",
-      storageBucket: "yuugotthis.firebasestorage.app",
-      messagingSenderId: "163407586342",
-      appId: "1:163407586342:web:0ddc75b68ffb838a9b32e7",
-      measurementId: "G-91YXNGQ4MM"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    // Function to show the loading overlay
-    function showLoadingOverlay() {
-      let overlay = document.getElementById('loading-overlay');
-      if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.id = 'loading-overlay';
-        overlay.style.position = 'fixed';
-        overlay.style.top = '0';
-        overlay.style.left = '0';
-        overlay.style.width = '100%';
-        overlay.style.height = '100%';
-        overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-        overlay.style.display = 'flex';
-        overlay.style.justifyContent = 'center';
-        overlay.style.alignItems = 'center';
-        overlay.style.zIndex = '10000';
-        overlay.innerHTML = '<div class="loader"><img src="loading.gif" alt="Loading..."></div>';
-        document.body.appendChild(overlay);
-      } else {
-        overlay.style.display = 'flex';
-      }
-    }
-
-    // Function to hide the loading overlay
-    function hideLoadingOverlay() {
-      const overlay = document.getElementById('loading-overlay');
-      if (overlay) {
-        overlay.style.display = 'none';
-      }
-    }
-    window.addEventListener("load", () => {
-  const loader = document.querySelector(".loader");
-  const minLoadTime = 3000; // 3 seconds
-
-  const loadStart = performance.now();
-
-  function hideLoader() {
-    const elapsed = performance.now() - loadStart;
-    const delay = Math.max(0, minLoadTime - elapsed);
-
-    setTimeout(() => {
-      loader.style.opacity = "0";
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 500); // fade-out duration
-    }, delay);
-  }
-
-  hideLoader();
-});
-
-
-    window.checkSecret = async function () {
-      const messageInput = document.getElementById('secretMessage');
-      const secret = messageInput.value.trim();
-      // Removed showLoadingOverlay() here to only show loader after success
-
-      try {
-        const response = await fetch('/api/verify-secret', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ secret }),
-        });
-
-        const data = await response.json();
-
-        if (data.success) {
-          // Show loading overlay on next page via sessionStorage flag
-          sessionStorage.setItem('showLoading', 'true');
-
-          // Sign in anonymously before redirecting
-          const result = await signInAnonymously(auth);
-          console.log("Logged in anonymously. UID:", result.user.uid);
-
-          // Redirect to the target URL
-          window.location.href = data.redirectUrl;
-
-        } else {
-          alert(data.message);
-          messageInput.value = "";
-          // No loader to hide here since we didn't show it yet
-        }
-      } catch (error) {
-        console.error('Error verifying secret or signing in:', error);
-        alert('An error occurred while verifying the secret.');
-        // No loader to hide here since we didn't show it yet
-      }
-    }
-  </script>
+  <!-- External module (moved from inline) -->
+  <script type="module" src="js/home.js"></script>
 </body>
 </html>
