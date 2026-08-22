@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ----------------- Motivational Typing -----------------
-const messages = ["One day...", "We'll meet."];
+const messages = ["I'll always love you <3 , and a part of you will always be with me, but things aren't meant to be for now, I am sorry."];
 let messageIndex = 0;
 const typingText = document.getElementById("typing-text");
 
