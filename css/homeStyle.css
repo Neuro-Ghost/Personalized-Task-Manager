@@ -1,162 +1,54 @@
 :root {
-  --calming-base-bg: linear-gradient(to bottom, #A7C0C6, #D3D3D3); /* Dusty blue/light gray gradient */
-  --calming-container-bg: rgba(245, 245, 245, 0.9); /* Very light gray */
-  --calming-text-primary: #333333; /* Dark gray */
-  --calming-input-bg: #F0F8FF; /* Alice Blue (very pale blue) */
-  --calming-input-border: #B0C4DE; /* Light Steel Blue */
-  --calming-input-focus-bg: #E6E6FA; /* Lavender */
-  --calming-input-focus-border: #6495ED; /* Cornflower Blue */
-  --calming-tab-bg: #D3D3D3; /* Light gray */
-  --calming-tab-text: #333333; /* Dark gray */
-  --calming-tab-hover-bg: #A7C0C6; /* Dusty blue */
-  --calming-tab-hover-text: #FFFFFF; /* White */
-  --calming-tab-active-bg: #8FBC8F; /* Dark Sea Green (a calming green alternative) */
-  --calming-add-btn-bg: #2E3A47; /* Dark almost navy blue */
-  --calming-add-btn-text: #FFFFFF; /* White */
-  --calming-add-btn-hover-bg: #546E7A; /* Cadet Blue */
-  --calming-add-btn-active-bg: #29434E; /* Dark Slate Gray */
-  --calming-clear-btn-bg: #A7C0C6; /* Dusty blue */
-  --calming-clear-btn-text: #FFFFFF; /* White */
-  --calming-clear-btn-hover-bg: #8FBC8F; /* Dark Sea Green */
-  --calming-clear-btn-active-bg: #6B8E23; /* Olive Drab */
-  --calming-selected-btn-bg: #2E3A47; /* Dark almost navy blue */
-  --calming-selected-btn-text: #FFFFFF; /* White */
-  --calming-selected-btn-border: #2E3A47; /* Dark almost navy blue */
-  --calming-task-bg: #F0F8FF; /* Alice Blue */
-  --calming-task-border: #B0C4DE; /* Light Steel Blue */
-  --calming-task-selected-bg: #ADD8E6; /* Light Blue */
-  --calming-task-selected-border: #6495ED; /* Cornflower Blue */
-  --calming-task-hover-bg: #E0FFFF; /* Light Cyan */
-  --calming-li-bg: #E0FFFF; /* Light Cyan */
-  --calming-footer-text: #FFFFFF; /* White */
-  --calming-mute-btn-bg: rgba(173, 216, 230, 0.8); /* Light Blue with transparency */
-  --calming-mute-btn-icon: #2E3A47; /* Dark almost navy blue */
-  --calming-mute-btn-hover-bg: rgba(173, 216, 230, 1); /* Solid Light Blue */
-  --calming-mute-btn-icon-muted: #778899; /* Dim Gray */
-  --calming-mute-btn-icon-unmuted: #4682B4; /* Steel Blue */
-  --calming-music-player-bg-start: #8FBC8F; /* Dark Sea Green */
-  --calming-music-player-bg-end: #B0E0E6; /* Powder Blue */
-  --calming-music-player-text: #FFFFFF; /* White */
-   --calming-music-player-controls: #2E3A47; /* Dark almost navy blue for better contrast */
-  --calming-progress-bg: #778899; /* Dim Gray */
-  --calming-progress-bar: #ADD8E6; /* Light Blue */
-  --calming-song-selector-bg-start: #8FBC8F; /* Dark Sea Green */
-  --calming-song-selector-bg-end: #B0E0E6; /* Powder Blue */
-  --calming-song-selector-text: #FFFFFF; /* White */
-  --calming-song-selector-option-bg: #5F9EA0; /* Cadet Blue */
-  --calming-time-display: #2E3A47; /* Light Gray */
-  --calming-animated-title: #ADD8E6; /* Light Blue */
-  --calming-blinking-cursor: #2E3A47; /* Dark almost navy blue */
-  --calming-scrollbar-track: #F0F8FF; /* Alice Blue */
-  --calming-scrollbar-thumb: #B0C4DE; /* Light Steel Blue */
-}
-/* homeStyle.css */
-body {
-  font-family: 'Quicksand', sans-serif; /* Or your preferred body font */
-  margin: 0; /* Reset default body margin */
-  overflow: hidden; /* Prevent scrollbars on the video background */
-}
-
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  color: var(--calming-music-player-text); /* White text */
-  text-align: center;
-  z-index: 1;
-}
-
-.prompt-container {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-  padding: 30px;
-  border-radius: 10px;
-}
-
-h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 3em;
-  margin-bottom: 20px;
-  color: var(--calming-animated-title); /* Light Blue */
-}
-
-input[type="text"]::placeholder {
-  color: #CCCCCC; /* Light gray placeholder for better contrast */
-}
-
-input[type="text"] {
-  padding: 10px;
-  border: 1px solid var(--calming-input-border); /* Light Steel Blue */
-  border-radius: 5px;
-  margin-bottom: 15px;
-  font-size: 1em;
-  text-align: center;
-  background-color: var(--calming-input-bg); /* Alice Blue */
-  color: #2E3A47; /* White text for better contrast */
-}
-
-button {
-  padding: 12px 25px;
-  background-color: var(--calming-add-btn-bg); /* Dark almost navy blue for better contrast */
-  color: var(--calming-music-player-text); /* White text for contrast */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Subtle dark text shadow */
-}
-
-button:hover {
-  background-color: var(--calming-add-btn-hover-bg); /* Cadet Blue */
-  color: var(--calming-tab-hover-text); /* White */
-}
-
-.video-container-home {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.background-video-home {
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-}
-
-#loading-overlay { /* Styles for the loading overlay */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(240, 248, 255, 0.8); /* Alice Blue with transparency */
-  display: none; /* Initially hide the loading overlay */
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-}
-
-.loader { /* Styles for the loading indicator */
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loader img {
-  width: 100%;
-  height: 100%;
+  /* Twilight Sky Gradient: Midnight Indigo to Sunset Violet */
+  --calming-base-bg: linear-gradient(to bottom, #1E1F3D, #4A3E62);
+  /* Softened dark glass with twilight tint */
+  --calming-container-bg: rgba(30, 31, 61, 0.85); 
+  --calming-text-primary: #F3F4F6; /* Crisp Off-White */
+  --calming-input-bg: #2B2D52; /* Deep Slate Indigo */
+  --calming-input-border: #7B6B92; /* Muted Violet-Pink */
+  --calming-input-focus-bg: #353866; 
+  --calming-input-focus-border: #F3A076; /* Warm Sunset Orange Accent */
+  --calming-tab-bg: #383250; /* Deep Sunset Purple */
+  --calming-tab-text: #E5E7EB; 
+  --calming-tab-hover-bg: #634C7A; 
+  --calming-tab-hover-text: #FFFFFF; 
+  --calming-tab-active-bg: #E37470; /* Coral Horizon Warmth */
+  --calming-add-btn-bg: #F3A076; /* Vibrant Sunset Orange */
+  --calming-add-btn-text: #1E1F3D; /* Dark Navy Text for strong contrast */
+  --calming-add-btn-hover-bg: #F6B493; 
+  --calming-add-btn-active-bg: #D9855C; 
+  --calming-clear-btn-bg: #7B6B92; 
+  --calming-clear-btn-text: #FFFFFF; 
+  --calming-clear-btn-hover-bg: #A36B89; 
+  --calming-clear-btn-active-bg: #5D4970; 
+  --calming-selected-btn-bg: #F3A076; 
+  --calming-selected-btn-text: #1E1F3D; 
+  --calming-selected-btn-border: #F3A076; 
+  --calming-task-bg: #2B2D52; 
+  --calming-task-border: #4A3E62; 
+  --calming-task-selected-bg: #3F3961; 
+  --calming-task-selected-border: #F3A076; 
+  --calming-task-hover-bg: #363457; 
+  --calming-li-bg: #282A4A; 
+  --calming-footer-text: #D1D5DB; 
+  --calming-mute-btn-bg: rgba(243, 160, 118, 0.25); 
+  --calming-mute-btn-icon: #F3A076; 
+  --calming-mute-btn-hover-bg: rgba(243, 160, 118, 0.45); 
+  --calming-mute-btn-icon-muted: #9CA3AF; 
+  --calming-mute-btn-icon-unmuted: #F3A076; 
+  --calming-music-player-bg-start: #2B2240; 
+  --calming-music-player-bg-end: #5A3D5C; 
+  --calming-music-player-text: #FFFFFF; 
+  --calming-music-player-controls: #F3A076; 
+  --calming-progress-bg: #3B334C; 
+  --calming-progress-bar: #F3A076; 
+  --calming-song-selector-bg-start: #2B2240; 
+  --calming-song-selector-bg-end: #5A3D5C; 
+  --calming-song-selector-text: #FFFFFF; 
+  --calming-song-selector-option-bg: #2B2240; 
+  --calming-time-display: #E5E7EB; 
+  --calming-animated-title: #F3A076; 
+  --calming-blinking-cursor: #F3A076; 
+  --calming-scrollbar-track: #1E1F3D; 
+  --calming-scrollbar-thumb: #634C7A; 
 }
