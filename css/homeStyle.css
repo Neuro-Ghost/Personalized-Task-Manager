@@ -52,3 +52,114 @@
   --calming-scrollbar-track: #1E1F3D; 
   --calming-scrollbar-thumb: #634C7A; 
 }
+
+/* homeStyle.css */
+body {
+  font-family: 'Quicksand', sans-serif; /* Or your preferred body font */
+  margin: 0; /* Reset default body margin */
+  overflow: hidden; /* Prevent scrollbars on the video background */
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: var(--calming-music-player-text); /* White text */
+  text-align: center;
+  z-index: 1;
+}
+
+.prompt-container {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  padding: 30px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: var(--calming-animated-title); /* Light Blue */
+}
+
+input[type="text"]::placeholder {
+  color: #CCCCCC; /* Light gray placeholder for better contrast */
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid var(--calming-input-border); /* Light Steel Blue */
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 1em;
+  text-align: center;
+  background-color: var(--calming-input-bg); /* Alice Blue */
+  color: #2E3A47; /* White text for better contrast */
+}
+
+button {
+  padding: 12px 25px;
+  background-color: var(--calming-add-btn-bg); /* Dark almost navy blue for better contrast */
+  color: var(--calming-music-player-text); /* White text for contrast */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Subtle dark text shadow */
+}
+
+button:hover {
+  background-color: var(--calming-add-btn-hover-bg); /* Cadet Blue */
+  color: var(--calming-tab-hover-text); /* White */
+}
+
+.video-container-home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.background-video-home {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+#loading-overlay { /* Styles for the loading overlay */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(240, 248, 255, 0.8); /* Alice Blue with transparency */
+  display: none; /* Initially hide the loading overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.loader { /* Styles for the loading indicator */
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader img {
+  width: 100%;
+  height: 100%;
+}
