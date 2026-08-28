@@ -85,7 +85,7 @@ h1 {
 }
 
 input[type="text"]::placeholder {
-  color: #CCCCCC; /* Light gray placeholder for better contrast */
+  color: #FFFFFF; /* WHITW placeholder for better contrast */
 }
 
 input[type="text"] {
@@ -96,7 +96,7 @@ input[type="text"] {
   font-size: 1em;
   text-align: center;
   background-color: var(--calming-input-bg); /* Alice Blue */
-  color: #2E3A47; /* White text for better contrast */
+  color: #FFFFFF; /* White text for better contrast */
 }
 
 button {
