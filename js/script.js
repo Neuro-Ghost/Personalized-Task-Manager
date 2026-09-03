@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ----------------- Motivational Typing -----------------
-const messages = ["I will be always be grateful that our lives crossed, meeting you is an unforgettable chaper in my life. "];
+const messages = ["I love you Salma "];
 let messageIndex = 0;
 const typingText = document.getElementById("typing-text");
 
