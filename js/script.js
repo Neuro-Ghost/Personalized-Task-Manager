@@ -158,13 +158,13 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "tout sen va", path: "assets/tout.mp3" },
         { name: "Malik al mawt", path: "assets/malik.mp3" },
         { name: "Jalil", path: "assets/Soft Spot (Acoustic).mp3" },
-        { name: "blue salvia", path: "assets/pryvt blue salvia lyrics YouTube.mp3" },
+        { name: "blue salvia", path: "assets/blue salvia.mp3" },
         { name: "Inazuma Sorrow", path: "assets/Inazuma Sorrow.mp3" },
         { name: "Soft Spot", path: "assets/Soft Spot (Acoustic).mp3" },
         { name: "Devil's Daughter", path: "assets/noname.mp3" },
         { name: "Cupid TwinVer", path: "assets/Cupid' (TwinVer.).mp3" },
         { name: "baby blue", path: "assets/rocco - baby blue (lyrics).mp3" },
-        { name: "10'", path: "assets/Laylow 10 Lyrics YouTube.mp3" },
+        { name: "10'", path: "assets/Laylow 10.mp3" },
     ];
 
     let currentTrackIndex = 0;
